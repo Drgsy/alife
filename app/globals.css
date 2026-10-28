@@ -10,9 +10,9 @@
   --board-bg: #142029;
   --board-grid: #1c2b36;
   --live: #f2c14e;
-  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
-  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --font-display: var(--ff-display, "Bricolage Grotesque"), "Segoe UI", system-ui, sans-serif;
+  --font-body: var(--ff-body, "IBM Plex Sans"), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--ff-mono, "IBM Plex Mono"), ui-monospace, Menlo, Consolas, monospace;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {

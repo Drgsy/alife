@@ -1,12 +1,18 @@
 {
   "name": "alife",
   "private": true,
-  "version": "0.1.0",
-  "type": "module",
+  "version": "0.2.0",
   "description": "Plac zabaw z systemami sztucznego życia, zaczynając od Gry w życie.",
   "scripts": {
-    "dev": "npx --yes serve .",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "test": "node scripts/verify-patterns.mjs",
     "build:artifact": "node scripts/build-artifact.mjs"
+  },
+  "dependencies": {
+    "next": "16.4.3",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
   }
 }

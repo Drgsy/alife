@@ -2,8 +2,8 @@
 // martwe natury się nie zmieniają, oscylatory mają podany okres (i żadnego krótszego),
 // statki odtwarzają się przesunięte o (dx, dy) po podanym okresie,
 // a działa wracają do siebie co okres i wypuszczają jeden szybowiec na okres.
-import { PATTERNS, CATEGORIES } from '../src/tabs/game-of-life/patterns.js';
-import { parseRLE } from '../src/tabs/game-of-life/rle.js';
+import { PATTERNS, CATEGORIES } from '../lib/game-of-life/patterns.js';
+import { parseRLE } from '../lib/game-of-life/rle.js';
 
 const key = (x, y) => `${x},${y}`;
 

@@ -1,16 +1,15 @@
 # ALife
 
-Plac zabaw z systemami sztucznego życia. Na razie jedna zakładka: **Gra w życie** (B3/S23)
-z interaktywną planszą i zoo organizmów w czterech kategoriach: martwe natury, oscylatory,
-statki i działa.
+Plac zabaw z systemami sztucznego życia, w Next.js. Na razie jedna zakładka: **Gra w życie** (B3/S23)
+z interaktywną planszą i zoo organizmów w czterech kategoriach: martwe natury, oscylatory, statki i działa.
 
 ## Uruchomienie lokalne
 
-Strona jest statyczna (HTML + moduły ES, bez kroku budowania):
+Wymaga Node.js 20.9 lub nowszego.
 
 ```bash
-npm run dev          # npx serve .
-# albo: python3 -m http.server 8000
+npm install
+npm run dev        # http://localhost:3000
 ```
 
 ## Testy zoo
@@ -19,23 +18,26 @@ npm run dev          # npx serve .
 npm test
 ```
 
-Skrypt `scripts/verify-patterns.mjs` symuluje każdy wzór na nieograniczonej płaszczyźnie i sprawdza
-okres, brak krótszego okresu, przesunięcie statków i to, że działa wypuszczają jeden szybowiec na okres.
+`scripts/verify-patterns.mjs` symuluje każdy wzór na nieograniczonej płaszczyźnie i sprawdza okres,
+brak krótszego okresu, przesunięcie statków i to, że działa wypuszczają jeden szybowiec na okres.
 
-## Vercel
+## Struktura
 
-Import repozytorium w Vercel z presetem **Other**, bez komendy budowania, katalog wyjściowy: główny.
-Routing działa na hashu (`#/gra-w-zycie`), więc nie potrzeba przekierowań.
+- `app/` – strony Next.js (App Router); każda zakładka to osobna trasa, np. `app/gra-w-zycie/page.js`.
+- `components/` – komponenty React (nawigacja, montowanie symulacji).
+- `lib/game-of-life/` – silnik (dowolna reguła B/S, torus), parser RLE, katalog wzorów, widok.
+- `lib/tabs.js` – lista zakładek w nawigacji.
+- `scripts/build-artifact.mjs` – składa jednoplikowy podgląd (`dist/alife.html`) publikowany jako artefakt.
 
 ## Dodawanie kolejnego systemu
 
-1. Utwórz `src/tabs/<nazwa>/index.js` z funkcją `mount(el)`, która zwraca funkcję sprzątającą.
-2. Dopisz wpis do tablicy `TABS` w `src/main.js`.
+1. Dodaj wpis w `lib/tabs.js`.
+2. Utwórz `app/<slug>/page.js` i komponent w `components/`.
 
-Silnik `src/tabs/game-of-life/engine.js` przyjmuje dowolną regułę B/S (np. `B36/S23` dla HighLife),
-więc można go użyć dla innych automatów typu Life.
+## Vercel
+
+Import repozytorium w Vercel; preset Next.js wykrywa się sam.
 
 ## Uwagi o nazwach
 
-Nazwy angielskie wzorów to nazwy kanoniczne z LifeWiki. Polskie nazwy są tłumaczeniami opisowymi
-(nie ma jednego ustalonego polskiego nazewnictwa).
+Nazwy angielskie wzorów to nazwy kanoniczne z LifeWiki. Polskie nazwy są tłumaczeniami opisowymi.
