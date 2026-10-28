@@ -186,15 +186,18 @@ export function mountGameOfLife(root) {
     grid.place(cells, ox, oy);
     setLoaded(`Wczytano: ${p.name}`);
     draw();
-    canvas.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    canvas.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
   }
 
   buildZoo(root, loadPattern);
 
   const ro = new ResizeObserver(resize);
   ro.observe(canvas.parentElement);
+  // Przerysuj planszę przy zmianie motywu (systemowego albo przez data-theme).
   const mq = matchMedia('(prefers-color-scheme: dark)');
   mq.addEventListener('change', draw);
+  const themeObserver = new MutationObserver(draw);
+  themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
   loadPattern(PATTERNS.find((p) => p.id === 'gosper-gun'));
 
@@ -202,6 +205,7 @@ export function mountGameOfLife(root) {
     setRunning(false);
     ro.disconnect();
     mq.removeEventListener('change', draw);
+    themeObserver.disconnect();
   };
 }
 

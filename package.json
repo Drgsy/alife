@@ -6,6 +6,7 @@
   "description": "Plac zabaw z systemami sztucznego życia, zaczynając od Gry w życie.",
   "scripts": {
     "dev": "npx --yes serve .",
-    "test": "node scripts/verify-patterns.mjs"
+    "test": "node scripts/verify-patterns.mjs",
+    "build:artifact": "node scripts/build-artifact.mjs"
   }
 }
