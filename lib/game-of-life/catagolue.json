@@ -1,6 +1,7 @@
 {
   "source": "https://catagolue.hatsya.com/census/b3s23/C1",
   "objects": 555656,
+  "total": 7410829165801358,
   "patterns": {
     "block": {
       "apgcode": "xs4_33",

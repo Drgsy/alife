@@ -6,6 +6,8 @@ import { PATTERNS, CATEGORIES } from '../lib/game-of-life/patterns.js';
 import { parseRLE } from '../lib/game-of-life/rle.js';
 import { Grid } from '../lib/game-of-life/engine.js';
 import { thumbLayout } from '../lib/game-of-life/thumb.js';
+import { apgcode } from '../lib/game-of-life/apgcode.js';
+import { readFileSync } from 'node:fs';
 
 const key = (x, y) => `${x},${y}`;
 
@@ -110,6 +112,13 @@ for (const p of PATTERNS) {
     for (let i = 0; i < period; i++) g.step();
     if (!g.cells.every((v, i) => v === start[i])) { fail(p, `miniatura ${cols}×${rows} psuje wzór (po ${k * period} pokoleniach)`); break; }
   }
+}
+
+// Kody apgcode liczone przez nas muszą się zgadzać z kodami ze spisu Catagolue.
+const census = JSON.parse(readFileSync(new URL('../lib/game-of-life/catagolue.json', import.meta.url), 'utf8')).patterns;
+for (const p of PATTERNS) {
+  const ours = apgcode(p, parseRLE(p.rle));
+  if (census[p.id] && census[p.id].apgcode !== ours) fail(p, `apgcode ${ours} ≠ ${census[p.id].apgcode} z Catagolue`);
 }
 
 console.log(failures === 0 ? `OK: wszystkie wzory (${PATTERNS.length}) zgodne z katalogiem.` : `${failures} błędów.`);

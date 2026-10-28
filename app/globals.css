@@ -28,6 +28,7 @@
 }
 
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 
 body {
   margin: 0;
@@ -162,8 +163,15 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   color: var(--muted);
   border: 1px solid var(--border);
 }
-.facts li.soup { color: var(--accent); border-color: var(--accent); cursor: help; }
-.zoo-lead a { color: var(--accent); }
+.facts li.origin { cursor: help; }
+.facts li.natural { color: var(--accent); border-color: var(--accent); }
+.facts li.synthetic { color: var(--text); border-style: dashed; }
+.apg { font-family: var(--font-mono); font-size: 0.74rem; color: var(--muted); overflow-wrap: anywhere; }
+.explain { max-width: 72ch; color: var(--muted); display: grid; gap: 8px; margin-top: 8px; }
+.explain p { margin: 0; }
+.explain a { color: var(--accent); }
+.explain code { font-family: var(--font-mono); font-size: 0.9em; color: var(--text); }
+.filters + .filters { margin-top: 8px; }
 .note { margin: 2px 0 0; font-size: 0.88rem; color: var(--muted); }
 .card .load { margin-top: auto; align-self: flex-start; }
 

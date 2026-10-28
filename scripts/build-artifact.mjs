@@ -8,6 +8,7 @@ const MODULES = [
   'lib/game-of-life/engine.js',
   'lib/game-of-life/patterns.js',
   'lib/game-of-life/thumb.js',
+  'lib/game-of-life/apgcode.js',
   'lib/game-of-life/mount.js',
   'lib/tabs.js',
 ];
