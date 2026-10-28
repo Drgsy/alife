@@ -70,13 +70,13 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .tabs a:hover { color: var(--text); }
 .tabs a[aria-current] { background: var(--bg); color: var(--text); font-weight: 600; }
 
+/* Plansza (.lab) zajmuje całą szerokość, teksty i zoo trzymają wygodną kolumnę. */
 main {
-  max-width: 1120px;
-  margin: 0 auto;
   padding-block: 24px 64px;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
 }
+.intro, .zoo { max-width: 1120px; margin-inline: auto; }
 h1, h2, h3, h4 { font-family: var(--font-display); text-wrap: balance; }
 
 h1 { font-size: 1.9rem; margin: 0 0 8px; }
@@ -86,7 +86,8 @@ h4 { margin: 0; font-size: 1rem; }
 .en { color: var(--muted); font-weight: 400; font-size: 0.85em; }
 .intro p, .zoo-lead, .cat-desc, .hint { color: var(--muted); max-width: 72ch; }
 
-.board-wrap { width: 100%; }
+.board-wrap { width: 100%; margin-top: 12px; }
+.lab { scroll-margin-top: 72px; }
 .board {
   display: block;
   max-width: 100%;
