@@ -1,0 +1,11 @@
+{
+  "name": "alife",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Plac zabaw z systemami sztucznego życia, zaczynając od Gry w życie.",
+  "scripts": {
+    "dev": "npx --yes serve .",
+    "test": "node scripts/verify-patterns.mjs"
+  }
+}
