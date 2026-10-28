@@ -1,0 +1,171 @@
+{
+  "source": "https://catagolue.hatsya.com/census/b3s23/C1",
+  "objects": 555656,
+  "patterns": {
+    "block": {
+      "apgcode": "xs4_33",
+      "occurrences": 2289012554464547,
+      "rank": 1
+    },
+    "blinker": {
+      "apgcode": "xp2_7",
+      "occurrences": 2125814142023464,
+      "rank": 2
+    },
+    "beehive": {
+      "apgcode": "xs6_696",
+      "occurrences": 1213000626848748,
+      "rank": 3
+    },
+    "glider": {
+      "apgcode": "xq4_153",
+      "occurrences": 651507869132021,
+      "rank": 4
+    },
+    "loaf": {
+      "apgcode": "xs7_2596",
+      "occurrences": 357861392767988,
+      "rank": 5
+    },
+    "boat": {
+      "apgcode": "xs5_253",
+      "occurrences": 330259965436367,
+      "rank": 6
+    },
+    "ship": {
+      "apgcode": "xs6_356",
+      "occurrences": 227964481385658,
+      "rank": 7
+    },
+    "tub": {
+      "apgcode": "xs4_252",
+      "occurrences": 72046164778960,
+      "rank": 8
+    },
+    "pond": {
+      "apgcode": "xs8_6996",
+      "occurrences": 70073248711348,
+      "rank": 9
+    },
+    "long-boat": {
+      "apgcode": "xs7_25ac",
+      "occurrences": 23206349085762,
+      "rank": 10
+    },
+    "toad": {
+      "apgcode": "xp2_7e",
+      "occurrences": 16219050876274,
+      "rank": 11
+    },
+    "beacon": {
+      "apgcode": "xp2_318c",
+      "occurrences": 5071995664129,
+      "rank": 13
+    },
+    "barge": {
+      "apgcode": "xs6_25a4",
+      "occurrences": 4874452859884,
+      "rank": 14
+    },
+    "mango": {
+      "apgcode": "xs8_69ic",
+      "occurrences": 1795521387987,
+      "rank": 16
+    },
+    "eater1": {
+      "apgcode": "xs7_178c",
+      "occurrences": 1156554709720,
+      "rank": 17
+    },
+    "lwss": {
+      "apgcode": "xq4_6frc",
+      "occurrences": 951886976326,
+      "rank": 18
+    },
+    "long-barge": {
+      "apgcode": "xs8_25ak8",
+      "occurrences": 651556091972,
+      "rank": 19
+    },
+    "aircraft-carrier": {
+      "apgcode": "xs6_39c",
+      "occurrences": 562961654123,
+      "rank": 20
+    },
+    "pulsar": {
+      "apgcode": "xp3_co9nas0san9oczgoldlo0oldlogz1047210127401",
+      "occurrences": 522559251862,
+      "rank": 21
+    },
+    "mwss": {
+      "apgcode": "xq4_27dee6",
+      "occurrences": 250780072012,
+      "rank": 23
+    },
+    "snake": {
+      "apgcode": "xs6_bd",
+      "occurrences": 154713924694,
+      "rank": 28
+    },
+    "hwss": {
+      "apgcode": "xq4_27deee6",
+      "occurrences": 43581648880,
+      "rank": 35
+    },
+    "pentadecathlon": {
+      "apgcode": "xp15_4r4z4r4",
+      "occurrences": 5625429286,
+      "rank": 52
+    },
+    "clock": {
+      "apgcode": "xp2_2a54",
+      "occurrences": 3278923015,
+      "rank": 62
+    },
+    "bipole": {
+      "apgcode": "xp2_31ago",
+      "occurrences": 686104008,
+      "rank": 102
+    },
+    "figure-eight": {
+      "apgcode": "xp8_gk2gb3z11",
+      "occurrences": 201435829,
+      "rank": 159
+    },
+    "spark-coil": {
+      "apgcode": "xp2_rhewehr",
+      "occurrences": 138258135,
+      "rank": 180
+    },
+    "mold": {
+      "apgcode": "xp4_37bkic",
+      "occurrences": 115242570,
+      "rank": 196
+    },
+    "queen-bee-shuttle": {
+      "apgcode": "xp30_w33z8kqrqk8zzzw33",
+      "occurrences": 6509403,
+      "rank": 528
+    },
+    "octagon-2": {
+      "apgcode": "xp5_idiidiz01w1",
+      "occurrences": 3459264,
+      "rank": 664
+    },
+    "tumbler": {
+      "apgcode": "xp14_j9d0d9j",
+      "occurrences": 2273350,
+      "rank": 762
+    },
+    "caterer": {
+      "apgcode": "xp3_4hh186z07",
+      "occurrences": 540305,
+      "rank": 1348
+    },
+    "loafer": {
+      "apgcode": "xq7_3nw17862z6952",
+      "occurrences": 2,
+      "rank": 247603
+    }
+  }
+}

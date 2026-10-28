@@ -41,3 +41,14 @@ Import repozytorium w Vercel; preset Next.js wykrywa się sam.
 ## Uwagi o nazwach
 
 Nazwy angielskie wzorów to nazwy kanoniczne z LifeWiki. Polskie nazwy są tłumaczeniami opisowymi.
+
+## Dane z Catagolue
+
+Etykiety „#N w zupach” na kartach pochodzą ze spisu [Catagolue b3s23/C1](https://catagolue.hatsya.com/census/b3s23/C1)
+(ranking obiektów powstałych z losowych zup). Wzory są dopasowywane po kształcie: kod apgcode jest dekodowany
+i porównywany ze wszystkimi fazami i orientacjami wzoru z zoo. Pełny spis (ok. 15 MB) leży na gałęzi `data/catagolue`.
+
+```bash
+git show origin/data/catagolue:data/catagolue-b3s23-C1.csv > /tmp/catagolue.csv
+node scripts/catagolue-ranks.mjs /tmp/catagolue.csv   # odświeża lib/game-of-life/catagolue.json
+```

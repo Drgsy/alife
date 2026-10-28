@@ -162,6 +162,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   color: var(--muted);
   border: 1px solid var(--border);
 }
+.facts li.soup { color: var(--accent); border-color: var(--accent); cursor: help; }
+.zoo-lead a { color: var(--accent); }
 .note { margin: 2px 0 0; font-size: 0.88rem; color: var(--muted); }
 .card .load { margin-top: auto; align-self: flex-start; }
 

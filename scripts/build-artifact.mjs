@@ -17,7 +17,8 @@ const strip = (src) =>
     .replace(/^import[\s\S]*?from\s+['"][^'"]+['"];?\s*$/gm, '')
     .replace(/^export\s+(?=(function|class|const|let|async))/gm, '');
 
-const js = MODULES.map((f) => `// ---- ${f}\n${strip(readFileSync(f, 'utf8'))}`).join('\n');
+const catagolue = `const CATAGOLUE = ${readFileSync('lib/game-of-life/catagolue.json', 'utf8').trim()};`;
+const js = catagolue + '\n' + MODULES.map((f) => `// ---- ${f}\n${strip(readFileSync(f, 'utf8'))}`).join('\n');
 const css = readFileSync('app/globals.css', 'utf8');
 
 const FONTS =
