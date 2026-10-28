@@ -4,6 +4,8 @@
 // a działa wracają do siebie co okres i wypuszczają jeden szybowiec na okres.
 import { PATTERNS, CATEGORIES } from '../lib/game-of-life/patterns.js';
 import { parseRLE } from '../lib/game-of-life/rle.js';
+import { Grid } from '../lib/game-of-life/engine.js';
+import { thumbLayout } from '../lib/game-of-life/thumb.js';
 
 const key = (x, y) => `${x},${y}`;
 
@@ -92,6 +94,21 @@ for (const p of PATTERNS) {
   if (p.check === 'mirror-half') {
     const half = run(s0, p.period / 2);
     if (!same(normalize(half).set, normalize(mirrorY(s0)).set)) fail(p, 'w połowie okresu nie jest odbiciem pionowym');
+  }
+}
+
+// Miniatury to mały torus: martwe natury i oscylatory muszą się tam zachowywać
+// tak samo jak na nieograniczonej płaszczyźnie (nie mogą dotknąć siebie przez brzeg).
+for (const p of PATTERNS) {
+  if (p.category !== 'still' && p.category !== 'oscillator') continue;
+  const { cells, cols, rows, ox, oy } = thumbLayout(p);
+  const g = new Grid(cols, rows);
+  g.place(cells, ox, oy);
+  const start = g.cells.slice();
+  const period = p.period || 1;
+  for (let k = 1; k <= 4; k++) {
+    for (let i = 0; i < period; i++) g.step();
+    if (!g.cells.every((v, i) => v === start[i])) { fail(p, `miniatura ${cols}×${rows} psuje wzór (po ${k * period} pokoleniach)`); break; }
   }
 }
 
